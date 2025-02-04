@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    .konten {
+      place-content: center;
+      height: 100vh;
+      display: grid;
+    }
+
+    .clickme {
+      display: grid;
+      place-content: center;
+      height: 100vh;
+      display: inline-block;
+    }
+
+    H1,
+    H3 {
+      color: #333;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .tombol {
+      margin-top: 30px;
+      display: flex;
+      gap: 10px;
+      ;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .btn-mau {
+      background-color: white;
+      border: 0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      color: #333;
+      font-weight: 700;
+
+
+    }
+
+    .btn-gamau {
+      border: 0;
+      padding: 6px 12px;
+      border-radius: 8px;
+      background-color: red;
+      color: white;
+      font-weight: 700;
+
+    }
+  </style>
+  <title>For ARA</title>
+</head>
+
+<body style="text-align: center;background-image: url(bg.jpg);">
+  <Section class="clickme" id="konten1">
+    <a href="#konten2" type="button" class="btn-mau" onclick="enablescroll()" style="text-decoration: none;">CLICK ME!</a>
+  </Section>
+
+  <section class="konten" id="konten2">
+    <div data-aos="flip-up" data-aos-duration="3000">
+
+    
+    <h1 da>Senja!!</h1>
+    <h3> Do u want to be Mine?</h3>
+    <div class="tombol">
+      <button type="button" class="btn-mau" data-bs-toggle="modal" data-bs-target="#exampleModal">MAU</button>
+      <button type="button" class="btn-gamau" onmouseover="gak(this)">GAK</button>
+    </div>
+  </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+        </div>
+        <div class="modal-body">
+          Yakin ga nih?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">ENGGA</button>
+          <a href="https://api.whatsapp.com/send/?phone=6281999538432&text=Yes i want to be yours🫶&type=phone_number&app_absent=0"
+            type="button" class="btn btn-primary">YAKIN DONG</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <audio id="song" loop>
+    <source src="lagu.mp3" type="audio/mp3" onload="playAudio()">
+  </audio>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <script>
+      AOS.init();
+  </script>
+  <script>
+    const rootElemet = document.querySelector(':root');
+    function disablescroll() {
+      scrollTop = window.pageYOffset;
+      scrollLeft = window.pageXOffset;
+      window.onload = function () {
+        window.onscroll = function () {
+          window.scrollTo(scrollTop, scrollLeft);
+        }
+      }
+
+      rootElemet.style.scrollBehavior = 'auto';
+    }
+
+
+    function gak(ini) {
+      ini.style.position = "absolute";
+      ini.style.left = `${Math.floor(Math.random() * 90)}%`;
+      ini.style.top = `${Math.floor(Math.random() * 90)}%`;
+    }
+
+    function playAudio() {
+            song.play();
+            isplaying = true;
+        }
+
+
+    function enablescroll() {
+      window.onscroll = function () { }
+      rootElemet.style.scrollBehavior = 'smooth';
+      // localStorage.setItem('opened','true');
+      playAudio();
+
+    }
+    
+
+    disablescroll();
+  </script>
+</body>
+
+</html>
